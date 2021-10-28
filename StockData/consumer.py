@@ -1,12 +1,17 @@
 from kafka import KafkaConsumer
 import sys
+import json
+import os
 
 from kafka.consumer import group
 
-bootstrap_servers = ['localhost:9092']
-consumer = KafkaConsumer('Stock2',bootstrap_servers = bootstrap_servers,auto_offset_reset = 'earliest',group_id = None)
+from dotenv import load_dotenv
+load_dotenv('.env')
 
-sys.stdout=open("StockData1.txt","w")
+key = os.getenv('bootstrap_servers')
+consumer = KafkaConsumer('Stock2',auto_offset_reset = 'earliest',group_id = None)
+
+sys.stdout=open('StockData2.txt','w')
 for message in consumer:
     values = message.value
     print(values)
