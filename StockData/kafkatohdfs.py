@@ -15,7 +15,7 @@ def run_cmd(args_list):
 if __name__== "__main__":
     
     #create a directory in HDFS
-    mkdir = run_cmd(['hdfs','dfs','-mkdir','/Kafka_Stock_Data'])
+    #mkdir = run_cmd(['hdfs','dfs','-mkdir','/Kafka_Stock_Data'])
 
     # copy StockData.txt data from local system to hdfs  
-    copy = run_cmd(['hdfs','dfs','-copyFromLocal', '/home/namratha/Documents/Kafka/StockData/StockData.txt', '/Kafka_Stock_Data'])     
+    copy = run_cmd(['hdfs','dfs','-copyFromLocal', '/home/namratha/Documents/Kafka/StockData/StockData1.txt', '/Kafka_Stock_Data'])     
